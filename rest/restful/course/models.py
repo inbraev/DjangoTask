@@ -16,10 +16,10 @@ class Branch(models.Model):
     longitude = models.CharField(max_length=100, blank=True, default='')
     latitude = models.CharField(max_length=100, blank=True, default='')
     address = models.CharField(max_length=100, blank=True, default='')
-    course = models.ForeignKey("Course", on_delete=models.CASCADE)
+    course = models.ForeignKey("Course", on_delete=models.CASCADE, related_name='branches')
 
     def __str__(self):
-        return self.name
+        return self.address
 
 
 class Contacts(models.Model):
@@ -32,12 +32,12 @@ class Contacts(models.Model):
         (FACEBOOK, "Facebook"),
         (EMAIL, "Email"),
     ]
-    type = models.IntegerField(choices=item, default='PHONE')
+    type = models.IntegerField(choices=item, default=PHONE)
     value=models.CharField(max_length=100, blank=True, default='')
-    course = models.ForeignKey("Course", on_delete=models.CASCADE)
+    course = models.ForeignKey("Course", on_delete=models.CASCADE,related_name='contacts')
 
     def __str__(self):
-        return self.name
+        return self.type
 
 
 class Course(models.Model):

@@ -18,6 +18,8 @@ class CourseDetail(RetrieveDestroyAPIView):
     serializer_class = CourseSerializer
 
 
+
+
 # categories
 class CategoryList(ListCreateAPIView):
     queryset = Category.objects.all()

@@ -3,12 +3,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('course/', views.CourseList.as_view()),
-    path('course/<int:pk>/', views.CourseDetail.as_view()),
-    path('category/', views.CategoryList.as_view()),
-    path('category/<int:pk>/', views.CategoryDetail.as_view()),
-    path('branch/', views.BranchList.as_view()),
-    path('branch/<int:pk>/', views.BranchDetail.as_view()),
-    path('contacts/', views.ContactsList.as_view()),
-    path('contacts/<int:pk>/', views.ContactsDetail.as_view()),
+    path('course/', views.CourseList.as_view(),name="CourseListUrl"),
+    path('course/<int:pk>/', views.CourseDetail.as_view(),name="CourseDetailUrl"),
+    path('category/', views.CategoryList.as_view(),name="CategoryListUrl"),
+    path('category/<int:pk>/', views.CategoryDetail.as_view(),name="CategoryDetailUrl"),
+    path('branch/', views.BranchList.as_view(),name="BranchListUrl"),
+    path('branch/<int:pk>/', views.BranchDetail.as_view(),name="BranchDetailUrl"),
+    path('contacts/', views.ContactsList.as_view(),name="ContactsListUrl"),
+    path('contacts/<int:pk>/', views.ContactsDetail.as_view(),name="ContactsDetailUrl"),
 ]
